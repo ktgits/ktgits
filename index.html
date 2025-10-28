@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khush Tiwari  — Portfolio</title>
+  <meta name="description" content="Khush Tiwari — Quality Assurance Intern, Developer, Research Scholar. Portfolio showcasing projects, experience, and skills." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#7c3aed; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071021 0%, #071428 65%); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      display:flex; align-items:start; justify-content:center; padding:32px 16px;
+    }
+    .wrap{width:100%; max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+    .avatar{width:86px;height:86px;border-radius:14px;flex:0 0 86px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:white;box-shadow:0 6px 18px rgba(124,58,237,0.18)}
+    h1{font-size:22px;margin:0}
+    .sub{color:var(--muted);font-size:13px;margin-top:6px}
+
+    nav{margin-left:auto;display:flex;gap:12px}
+    a.btn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-size:13px}
+    a.btn:hover{transform:translateY(-2px)}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:28px}
+
+    /* left column */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .about h2{margin:0 0 8px 0}
+    .lead{font-size:15px;color:#dbe9ff;line-height:1.5}
+
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .section{margin-top:18px}
+    .section h3{margin:0 0 10px 0}
+    .exp{display:flex;flex-direction:column;gap:12px}
+    .exp .item{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+    .item .role{font-weight:600}
+    .muted{color:var(--muted);font-size:13px}
+
+    /* projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 6px 0}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+    .project .tags{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+
+    /* right column */
+    .profile-card{position:sticky;top:32px}
+    .meta{display:flex;flex-direction:column;gap:10px}
+    .skill-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* contact form */
+    form{display:flex;flex-direction:column;gap:8px}
+    input,textarea,select{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit;font-size:14px}
+    button.primary{background:linear-gradient(90deg,var(--accent),#06b6d4);border:none;padding:10px;border-radius:10px;color:white;font-weight:600;cursor:pointer}
+
+    /* responsive */
+    @media (max-width:980px){main{grid-template-columns:1fr} .projects-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">AG</div>
+      <div>
+        <h1>Ankita Gangal</h1>
+        <div class="sub">Quality Assurance Intern at GKM IT · AWS Academy Educator · Research Intern (IIT Ropar)</div>
+      </div>
+
+      <nav>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#experience">Experience</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Left column -->
+      <div>
+        <section id="about" class="card about">
+          <h2>About</h2>
+          <p class="lead">I am a versatile and enthusiastic <strong>Problem Solver, Developer, and Research Scholar</strong> focused on building strong programming, business, and development logic to deliver end-to-end solutions that drive company growth and improve user satisfaction. I combine hands-on engineering with QA best practices to ensure products are reliable, secure, and delightful for users.</p>
+
+          <div class="chips">
+            <div class="chip">Quality Assurance</div>
+            <div class="chip">AWS & Cloud</div>
+            <div class="chip">AI / ML</div>
+            <div class="chip">Frontend (HTML/CSS/JS)</div>
+            <div class="chip">Problem Solving</div>
+            <div class="chip">Research</div>
+          </div>
+
+          <div class="section">
+            <h3>Highlights</h3>
+            <ul class="muted">
+              <li>Currently: Quality Assurance Intern — GKM IT (Udaipur)</li>
+              <li>AWS Academy Educator & Team Lead — built cloud workshops and mentor programs</li>
+              <li>Summer Research Intern — IIT Ropar (Pathfinding Visualizer)</li>
+              <li>Multiple certifications: AWS, Azure AZ-900, NPTEL Discipline Star, Goldman Sachs & Deloitte programs</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="projects" class="card section">
+          <h3>Projects</h3>
+          <div class="projects-grid">
+            <div class="project">
+              <h4>Smart Interactive Pathfinding Visualizer</h4>
+              <p>Interactive visualization of BFS, DFS, Dijkstra and Prim's MST. Built with HTML, CSS and JavaScript during an IIT Ropar research internship.</p>
+              <div class="tags"><span class="chip">JavaScript</span><span class="chip">Algorithms</span><span class="chip">HCI</span></div>
+            </div>
+
+            <div class="project">
+              <h4>Agri Chatbot & Crop Yield Predictor</h4>
+              <p>Web application integrating ML models to predict crop yield and a farmer-focused chatbot for practical guidance — developed during IBM SkillsBuild.</p>
+              <div class="tags"><span class="chip">Python</span><span class="chip">AI</span><span class="chip">Web App</span></div>
+            </div>
+
+            <div class="project">
+              <h4>QA Automation Framework (Prototype)</h4>
+              <p>Design for automated test flows, CI integration, and reporting — focused on improving test coverage and developer feedback loops.</p>
+              <div class="tags"><span class="chip">Testing</span><span class="chip">CI/CD</span><span class="chip">Selenium</span></div>
+            </div>
+
+            <div class="project">
+              <h4>Cloud Workshops & Labs</h4>
+              <p>Hands-on AWS labs for peers covering IAM, EC2, VPC, S3, Lambda and deployment patterns. Mentored students towards certifications.</p>
+              <div class="tags"><span class="chip">AWS</span><span class="chip">Teaching</span><span class="chip">Mentoring</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="card section">
+          <h3>Experience</h3>
+          <div class="exp">
+            <div class="item">
+              <div class="role">Quality Assurance Intern — GKM IT</div>
+              <div class="muted">Sep 2025 - Present · Udaipur, Rajasthan</div>
+              <div class="muted">Focus: Manual & automated QA, test planning, bug triage, collaborating with dev teams to improve product quality.</div>
+            </div>
+
+            <div class="item">
+              <div class="role">AWS Academy Educator & Team Lead — GITS</div>
+              <div class="muted">May 2025 - Present · Udaipur, Rajasthan</div>
+              <div class="muted">Led cloud learning initiatives, workshops, and peer mentoring for AWS certifications and cloud projects.</div>
+            </div>
+
+            <div class="item">
+              <div class="role">Summer Intern — IIT Ropar</div>
+              <div class="muted">May 2025 - Jul 2025 · Ropar, Punjab</div>
+              <div class="muted">Built interactive algorithm visualizers, collaborated with research supervisors, and presented technical findings.</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education" class="card section">
+          <h3>Education & Certifications</h3>
+          <ul class="muted">
+            <li>NPTEL Discipline Star • Cloud Computing (Topper)</li>
+            <li>AWS Academy Educator • AWS Generative AI • AWS Cloud Foundation</li>
+            <li>Azure AZ-900, Oracle Cloud Certifications, Salesforce AI Associate</li>
+            <li>Completed programs with Goldman Sachs, Deloitte, JPMorgan — Data & Operations simulations</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <!-- Right column -->
+      <aside class="profile-card">
+        <div class="card meta">
+          <h3>Quick Info</h3>
+          <div><strong>Location:</strong> Udaipur, Rajasthan, India</div>
+          <div><strong>Current:</strong> Quality Assurance Intern — GKM IT</div>
+          <div><strong>Email:</strong> <a href="mailto:ankita@example.com">ankita@example.com</a></div>
+
+          <div class="section">
+            <h3>Skills</h3>
+            <div class="skill-list">
+              <div class="chip">Quality Assurance</div>
+              <div class="chip">JavaScript</div>
+              <div class="chip">AWS</div>
+              <div class="chip">AI / ML</div>
+              <div class="chip">HTML & CSS</div>
+              <div class="chip">Problem Solving</div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Badges & Awards</h3>
+            <div class="muted">NPTEL Discipline Star • AWS Educator • IBM AI Internship Winner • Multiple industry virtual programs</div>
+          </div>
+
+          <div class="section" id="contact">
+            <h3>Contact</h3>
+            <form id="contactForm" onsubmit="submitContact(event)">
+              <input id="name" placeholder="Your name" required />
+              <input id="email" type="email" placeholder="Your email" required />
+              <textarea id="message" rows="4" placeholder="Message" required></textarea>
+              <button class="primary" type="submit">Send message</button>
+            </form>
+          </div>
+        </div>
+
+        <footer>
+          <div>Made with ❤️ Khush Tiwari</div>
+          <div style="margin-top:6px">Last updated: Oct 2025</div>
+        </footer>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll for nav
+    document.querySelectorAll('a.btn').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // Contact form handler (simple mailto fallback)
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message) return alert('Please fill all fields');
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\n'+message);
+      window.location.href = `mailto:ankita@example.com?subject=${subject}&body=${body}`;
+    }
+
+    // Small accessibility tweak: focus outline
+    document.addEventListener('keydown', e => {
+      if(e.key === 'Tab') document.body.style.outline = 'none';
+    });
+  </script>
+</body>
+</html>
