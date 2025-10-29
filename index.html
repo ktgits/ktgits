@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Khush Tiwari  — Portfolio</title>
   <meta name="description" content="Khush Tiwari — Quality Assurance Intern, Developer, Research Scholar. Portfolio showcasing projects, experience, and skills." />
+  
+  <!-- SweetAlert for form notifications -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
   <style>
     :root{
       --bg:#0f1724; --card:#0b1220; --accent:#7c3aed; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
@@ -92,7 +96,6 @@
       a.btn{font-size:12px;padding:6px 10px}
     }
   </style>
-  <script src="google-form.js"></script>
 </head>
 <body>
   <div class="wrap">
@@ -230,12 +233,11 @@
           <div class="section" id="contact">
             <h3>Contact</h3>
 
-            <form id="contactForm">
+            <form name="contactForm" id="contactForm">
               <input name="name" id="name" placeholder="Your name" required />
               <input name="email" id="email" type="email" placeholder="Your email" required />
               <textarea name="message" id="message" rows="4" placeholder="Message" required></textarea>
               <button class="primary" type="submit" id="submitBtn">Send message</button>
-              <div id="formStatus" class="form-status"></div>
             </form>
           </div>
         </div>
@@ -259,53 +261,57 @@
       });
     });
 
-    // Contact form handler with Formspree
-    const form = document.getElementById('contactForm');
-    const statusDiv = document.getElementById('formStatus');
+    // Google Form submission handler
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxpdKScPqLjQd9Xq9V2nQ7uRNcsBQ1mWshEM9SJ7xr7HVB0vQOOXJW0nior8jAAeR9kjA/exec";
+    const form = document.forms["contactForm"];
     const submitBtn = document.getElementById('submitBtn');
-    
+
+    console.log("Form element found:", form);
+    console.log("Submit button found:", submitBtn);
+    console.log("Script URL:", scriptURL);
+
     if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent page refresh
-        e.stopPropagation(); // Stop event bubbling
+      console.log("✓ Google Form script loaded successfully");
+      
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("📝 Form submitted!");
         
-        // Disable button and show loading
+        // Show loading state
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
-        statusDiv.textContent = '';
-        statusDiv.className = 'form-status';
-        statusDiv.style.display = 'block';
         
         const formData = new FormData(form);
         
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            statusDiv.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
-            statusDiv.className = 'form-status success';
-            statusDiv.style.display = 'block';
-            form.reset();
-          } else {
-            throw new Error('Form submission failed');
-          }
-        } catch (error) {
-          statusDiv.textContent = '✗ Oops! Something went wrong. Please try again or email me directly.';
-          statusDiv.className = 'form-status error';
-          statusDiv.style.display = 'block';
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send message';
+        // Log form data
+        console.log("Form data being sent:");
+        for (let [key, value] of formData.entries()) {
+          console.log(`  ${key}: ${value}`);
         }
         
-        return false; // Extra safety to prevent refresh
+        console.log("🚀 Sending request to:", scriptURL);
+
+        fetch(scriptURL, { 
+          method: "POST", 
+          body: formData,
+          mode: 'no-cors' // Important for Google Apps Script
+        })
+          .then((response) => {
+            console.log("✅ Response received:", response);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+            swal("Done!", "Your message has been submitted successfully. I'll get back to you soon!", "success");
+            form.reset();
+          })
+          .catch((error) => {
+            console.error("❌ Error occurred:", error);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+            swal("Error", "Something went wrong. Please try again or email me directly!", "error");
+          });
       });
+    } else {
+      console.error("❌ Form not found!");
     }
 
     // Small accessibility tweak: focus outline
